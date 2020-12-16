@@ -1,0 +1,85 @@
+:root{
+    --orange : #F87C56;
+    --green : #80ECAB;
+    --purple: #A78CF3;
+}
+html{
+    scroll-snap-type: y mandatory;
+    font-family: 'Montserrat', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    /* scroll-snap-type: y mandatory; */
+    
+}
+.main{
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+.nav-bar{
+    position: fixed;
+    height: 15%;
+    width: 100%;
+    font-weight: 300;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "logo . nav-buttons";
+    align-content: center;
+    
+}
+.logo{
+    grid-area: logo;
+    justify-self: center;
+}
+.nav-buttons{
+    grid-area: nav-buttons;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    align-content: center;
+    
+}
+.about{
+    background-color: var(--orange);
+    padding: 5px 10px;
+    justify-self: center;
+}
+.projects{
+    background-color: var(--green);
+    padding: 5px 10px;
+    justify-self: center;
+}
+.contact{
+    background-color: var(--purple);
+    padding: 5px 10px;
+    justify-self: center;
+}
+.hero-container{
+    height: 100%;
+}
+.hero{
+    height: 100%; 
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero.welcome{
+    scroll-snap-align: start;
+    font-size: 72px;
+}
+.hero.about{
+    background-color: grey;
+    scroll-snap-align: start;
+}
+.hero.projects{
+    background-color: hotpink;
+    scroll-snap-align: start;
+}
+.hero.contact{
+    background-color: indigo;
+    scroll-snap-align: start;
+}
