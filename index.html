@@ -6,35 +6,97 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Portfolio</title>
-    <meta name="description" content="CodersCamp to darmowy, otwarty kurs programowania webowego we Wrocławiu. Sprawdź, czego nauczysz się na CodersCamp i spróbuj swoich sił w branży IT!">
+    <meta name="description"
+        content="CodersCamp to darmowy, otwarty kurs programowania webowego we Wrocławiu. Sprawdź, czego nauczysz się na CodersCamp i spróbuj swoich sił w branży IT!">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
 </head>
 
 <body>
-    
-    
+
+
     <div class="main">
         <div class="nav-bar">
             <div class="logo">
                 <img src="./photos/logo.svg">
             </div>
             <div class="nav-buttons">
-                <div class="about">ABOUT</div>
-                <div class="projects">PROJECTS</div>
-                <div class="contact">CONTACT</div>
+                <div class="nav-button orange">ABOUT</div>
+                <div class="nav-button green">PROJECTS</div>
+                <div class="nav-button purple">CONTACT</div>
             </div>
         </div>
         <div class="hero-container">
             <div class="hero welcome">
-                <div class="welcome">Hello There! I'm Simon<br>and this is my portfolio.</div>
+                <div class="container welcome">
+                    <p><span class="orange">Hello</span> there! I'm <span class="green">Simon</span><br>and this is my <span class="purple">portfolio.</span></p>
+                </div>
             </div>
-            <div class="hero about">HERO ABOUT</div>
-            <div class="hero projects">HERO PROJECTS</div>
-            <div class="hero contact">HERO CONTACT</div>
+            <div class="hero about">
+                <div class="container about">
+                    <div class="container-top">
+                        <p>About me</p>
+                    </div>
+                    <div class="container-bottom">
+                        <div class="coding">
+                            <div class="box orange">Coding</div>
+
+                        </div>
+                        <div class="studying">
+                            <div class="box green">Studying</div>
+                            <div class="box green hidden">description</div>
+                        </div>
+                        <div class="hiking">
+                            <div class="box purple">Hiking</div>
+                            <div class="box purple hidden">description</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero projects">
+                <div class=" container projects">
+                    <div class="container-top">
+                        <p>Projects</p>
+                    </div>
+                    <div class="container-bottom">
+                        <div class="project">
+                            <div class="box orange">PROJ1</div>
+                            <div class="box orange hidden">description</div>
+                        </div>
+                        <div class="project">
+                            <div class="box green">PROJ2</div>
+                            <div class="box green hidden">description</div>
+                        </div>
+                        <div class="project">
+                            <div class="box purple">PROJ3</div>
+                            <div class="box purple hidden">description</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero contact">
+                <div class=" container contact">
+                    <div class="container-top">
+                        <p>Contact</p>
+                    </div>
+                    <div class="container-bottom">
+                        <div class="box-small orange">
+                            <span class="iconify" data-inline="false" data-icon="mdi:gmail"></span>
+                        </div>
+                        <div class="box-small green">
+                            <span class="iconify" data-inline="false" data-icon="bytesize:github"></span>
+                        </div>
+                        <div class="box-small purple">
+                            <span class="iconify" data-inline="false" data-icon="fa-brands:facebook"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
 </body>
+
 </html>

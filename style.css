@@ -2,6 +2,7 @@
     --orange : #F87C56;
     --green : #80ECAB;
     --purple: #A78CF3;
+    --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 html{
     scroll-snap-type: y mandatory;
@@ -28,7 +29,7 @@ body{
     grid-template-rows: auto;
     grid-template-areas: "logo . nav-buttons";
     align-content: center;
-    
+    z-index: 3;
 }
 .logo{
     grid-area: logo;
@@ -42,20 +43,19 @@ body{
     align-content: center;
     
 }
-.about{
-    background-color: var(--orange);
+.nav-button{
     padding: 5px 10px;
+    box-shadow: var(--shadow);
     justify-self: center;
 }
-.projects{
+.orange{
+    background-color: var(--orange);  
+}
+.green{
     background-color: var(--green);
-    padding: 5px 10px;
-    justify-self: center;
 }
-.contact{
+.purple{
     background-color: var(--purple);
-    padding: 5px 10px;
-    justify-self: center;
 }
 .hero-container{
     height: 100%;
@@ -72,14 +72,101 @@ body{
     font-size: 72px;
 }
 .hero.about{
-    background-color: grey;
     scroll-snap-align: start;
 }
 .hero.projects{
-    background-color: hotpink;
     scroll-snap-align: start;
 }
 .hero.contact{
-    background-color: indigo;
     scroll-snap-align: start;
+}
+.container.welcome{
+    display: flex;
+}
+.container.welcome .orange{
+    background: linear-gradient(180deg,rgba(255,255,255,0) 20%, var(--orange) 20%);
+}
+.container.welcome .green{
+    background: linear-gradient(0deg,rgba(255,255,255,0) 20%, var(--green) 20%);
+}
+.container.welcome .purple{
+    background: linear-gradient(180deg,rgba(255,255,255,0) 40%, var(--purple) 40%);
+}
+
+.container.about{ 
+    flex-basis: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.container-top{
+    font-size: 72px;
+}
+.container-bottom{
+    display: flex;
+}
+.container.about .container-bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.container.projects .container-bottom{
+    justify-content: start;
+    max-width: 60vh;
+    flex-wrap: wrap;
+}
+.container.contact .container-bottom{
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 40vh;
+}
+.coding{
+    position: relative;
+}
+.studying{
+    position: relative;
+}
+.hiking{
+    position: relative;
+}
+.project{
+    position: relative;
+}
+.box{
+    box-sizing: border-box;
+    width: 30vh;
+    height: 30vh;
+    font-size: 48px;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: relative;
+    z-index: 2;
+    
+}
+.box-small{
+    box-shadow: var(--shadow);
+}
+.hidden{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+.iconify{
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 100px;
 }
