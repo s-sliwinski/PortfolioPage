@@ -19,6 +19,10 @@ body{
     width: 100%;
     box-sizing: border-box;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 .nav-bar{
     position: fixed;
     height: 15%;
@@ -108,7 +112,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 .container-top{
     font-size: 72px;
