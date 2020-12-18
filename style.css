@@ -2,7 +2,8 @@
     --orange : #F87C56;
     --green : #80ECAB;
     --purple: #A78CF3;
-    --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    --shadow-hovered: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 html{
     scroll-snap-type: y mandatory;
@@ -35,15 +36,23 @@ a{
     align-content: center;
     z-index: 3;
 }
+#logo{
+    box-shadow: var(--shadow);
+    transition: all;
+}
+#logo:hover{
+    box-shadow: var(--shadow-hovered);
+}
 .logo{
     grid-area: logo;
     justify-self: center;
+    
 }
 .nav-buttons{
     grid-area: nav-buttons;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
+    /* grid-template-rows: auto; */
     align-content: center;
     
 }
@@ -51,6 +60,11 @@ a{
     padding: 5px 10px;
     box-shadow: var(--shadow);
     justify-self: center;
+    transition-property: all;
+}
+.nav-button:hover{
+    transform: rotateZ(-5deg);
+    box-shadow: var(--shadow-hovered);
 }
 .orange{
     background-color: var(--orange);  
@@ -88,13 +102,25 @@ a{
     display: flex;
 }
 .container.welcome .orange{
-    background: linear-gradient(180deg,rgba(255,255,255,0) 20%, var(--orange) 20%);
+    background: linear-gradient(180deg,rgba(255,255,255,1) 20%, var(--orange) 20%);
+    transition-property: background;
 }
 .container.welcome .green{
-    background: linear-gradient(0deg,rgba(255,255,255,0) 20%, var(--green) 20%);
+    background: linear-gradient(0deg,rgba(255,255,255,1) 20%, var(--green) 20%);
+    transition-property: background;
 }
 .container.welcome .purple{
-    background: linear-gradient(180deg,rgba(255,255,255,0) 40%, var(--purple) 40%);
+    background: linear-gradient(180deg,rgba(255,255,255,1) 40%, var(--purple) 40%);
+    transition-property: background;
+}
+.container.welcome .orange:hover{
+    background: linear-gradient(180deg,rgba(255,255,255,1) 80%, var(--orange) 80%);
+}
+.container.welcome .green:hover{
+    background: linear-gradient(0deg,rgba(255,255,255,1) 40%, var(--green) 40%);
+}
+.container.welcome .purple:hover{
+    background: linear-gradient(0deg,rgba(255,255,255,1) 40%, var(--purple) 40%);
 }
 
 .container.about{ 
@@ -137,14 +163,89 @@ a{
 .coding{
     position: relative;
 }
+.coding .box.orange:first-child{
+    transition-property: all;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-in-out;
+}
+.coding .box.orange:hover:first-child{
+    transform: translateY(-30vh);
+}
 .studying{
     position: relative;
+}
+.studying .box.green:first-child{
+    transition-property: all;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-in-out;
+}
+.studying .box.green:hover:first-child{
+    transform: translateY(-30vh);
 }
 .hiking{
     position: relative;
 }
+.hiking .box.purple:first-child{
+    transition-property: all;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-in-out;
+}
+.hiking .box.purple:hover:first-child{
+    transform: translateY(-30vh);
+}
 .project{
     position: relative;
+}
+.project .box.orange:first-child{
+    transition-property: z-index, transform;
+    transition-duration: 0s, 1.5s;
+    transition-timing-function: ease-in-out;
+}
+.project .box.orange:hover:first-child{
+    z-index: 3;
+    transform: translateX(30vh);
+    
+}
+.project .box.green:first-child{
+    transition-property: z-index, transform;
+    transition-duration: 0s, 1.5s;
+    transition-timing-function: ease-in-out;
+}
+.project .box.green:hover:first-child{
+    z-index: 3;
+    transform: translateY(30vh);
+}
+.project .box.purple:first-child{
+    transition-property: all;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-in-out;
+}
+.project .box.purple:hover:first-child{
+    transform: translateX(30vh);
+}
+.container.contact .box-small.orange{
+    transition: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+.container.contact .box-small.orange:hover{
+    border-radius: 25% 25% 25% 25%;
+}
+.container.contact .box-small.green{
+    transition: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+.container.contact .box-small.green:hover{
+    border-radius: 50% 50% 50% 50%;
+}
+.container.contact .box-small.purple{
+    transition: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+.container.contact .box-small.purple:hover{
+    border-radius: 25% 25% 25% 25%;
 }
 .box{
     box-sizing: border-box;
@@ -164,6 +265,8 @@ a{
     box-shadow: var(--shadow);
 }
 .hidden{
+    font-size: 20px;
+    font-weight: 300;
     position: absolute;
     top: 0;
     z-index: 1;
