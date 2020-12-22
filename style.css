@@ -8,12 +8,13 @@
 html{
     scroll-snap-type: y mandatory;
     font-family: 'Montserrat', sans-serif;
+    font-size: 62.5%;
 }
 body{
     margin: 0;
     padding: 0;
     /* scroll-snap-type: y mandatory; */
-    
+    font-size: 1.6rem;
 }
 .main{
     height: 100vh;
@@ -57,7 +58,7 @@ a{
     
 }
 .nav-button{
-    padding: 5px 10px;
+    padding: 0.5rem 1rem;
     box-shadow: var(--shadow);
     justify-self: center;
     transition-property: all;
@@ -87,7 +88,7 @@ a{
 }
 .hero.welcome{
     scroll-snap-align: start;
-    font-size: 72px;
+    font-size: 7.2rem;
 }
 .hero.about{
     scroll-snap-align: start;
@@ -96,6 +97,9 @@ a{
     scroll-snap-align: start;
 }
 .hero.contact{
+    scroll-snap-align: start;
+}
+.hero.form{
     scroll-snap-align: start;
 }
 .container.welcome{
@@ -144,7 +148,7 @@ a{
     align-items: center;
 }
 .container-top{
-    font-size: 72px;
+    font-size: 7.2rem;
 }
 .container-bottom{
     display: flex;
@@ -204,9 +208,10 @@ a{
     transition-property: z-index, transform;
     transition-duration: 0s, 1.5s;
     transition-timing-function: ease-in-out;
+    z-index: 3;
 }
 .project .box.orange:hover:first-child{
-    z-index: 3;
+    
     transform: translateX(30vh);
     
 }
@@ -255,7 +260,7 @@ a{
     box-sizing: border-box;
     width: 30vh;
     height: 30vh;
-    font-size: 48px;
+    font-size: 4.8rem;
     box-shadow: var(--shadow);
     display: flex;
     justify-content: center;
@@ -269,7 +274,7 @@ a{
     box-shadow: var(--shadow);
 }
 .hidden{
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 300;
     position: absolute;
     top: 0;
@@ -277,11 +282,49 @@ a{
 }
 .iconify{
     box-sizing: border-box;
-    padding: 10px;
+    padding: 1rem;
     font-size: 100px;
 }
 
 @keyframes intro{
     0% {transform: scale(0,0);}
     100%{transform: scale(1,1);}
+}
+@media screen and (max-width: 400px) {
+    html{
+        font-size: 40%;
+    }
+    .nav-bar{
+        grid-template-columns: repeat(auto-fill, 1fr);
+    }
+    .container.welcome{
+        justify-self: center;
+        align-self: center;
+    }
+    .container.about{
+        justify-content: center;
+        align-content: center;
+    }
+    .container-bottom{
+        flex-direction: column;
+        justify-self: center;
+        align-self: center;
+    }
+    .box{
+        width: 20vh;
+        height: 20vh;
+    }
+    .container.about .box:active:first-child{
+        transform: translateX(20vh);
+    }
+    .project .box.orange:active:first-child{
+        transform: translateY(20vh); 
+    }
+    .project .box.green:active:first-child{
+        z-index: 3;
+        transform: translateY(20vh);
+    }
+    .project .box.purple:active:first-child{
+        transform: translateY(-20vh);
+    }
 }
