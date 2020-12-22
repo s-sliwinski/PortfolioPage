@@ -314,17 +314,17 @@ a{
         width: 20vh;
         height: 20vh;
     }
-    .container.about .box:active:first-child{
+    .container.about .box:hover:first-child, .container.about .box:active:first-child{
         transform: translateX(20vh);
     }
-    .project .box.orange:active:first-child{
+    .project .box.orange:hover:first-child, .project .box.orange:active:first-child{
         transform: translateY(20vh); 
     }
-    .project .box.green:active:first-child{
+    .project .box.green:hover:first-child, .project .box.green:active:first-child{
         z-index: 3;
         transform: translateY(20vh);
     }
-    .project .box.purple:active:first-child{
+    .project .box.purple:hover:first-child, .project .box.purple:active:first-child{
         transform: translateY(-20vh);
     }
 }
